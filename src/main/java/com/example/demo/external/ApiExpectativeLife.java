@@ -1,6 +1,5 @@
 package com.example.demo.external;
 
-import com.example.demo.external.model.ExpectativeLifeResponse;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Headers;

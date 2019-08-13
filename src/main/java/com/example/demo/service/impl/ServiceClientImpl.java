@@ -4,7 +4,7 @@ package com.example.demo.service.impl;
 import com.example.demo.external.ApiExpectativeLife;
 import com.example.demo.model.ClientRequest;
 import com.example.demo.model.ClientResponse;
-import com.example.demo.external.model.ExpectativeLifeResponse;
+import com.example.demo.external.ExpectativeLifeResponse;
 import com.example.demo.service.ServiceClient;
 import com.example.demo.util.ClientAdapter;
 import com.example.demo.util.SexEnum;
