@@ -1,4 +1,4 @@
-package com.example.demo.config;//package review.intercorp.client.config;
+package com.example.demo.config;
 //
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -32,7 +32,7 @@ public class SwaggerConfig {
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("review.intercorp.client.expose"))
+                .apis(RequestHandlerSelectors.basePackage("com.example.demo.expose"))
                 .paths(PathSelectors.any())
                 .paths(PathSelectors.regex("/.*"))
                 .build()
