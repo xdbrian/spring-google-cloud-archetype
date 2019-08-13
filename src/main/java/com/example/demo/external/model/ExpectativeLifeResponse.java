@@ -1,4 +1,4 @@
-package com.example.demo.model;
+package com.example.demo.external.model;
 
 import com.fasterxml.jackson.annotation.*;
 

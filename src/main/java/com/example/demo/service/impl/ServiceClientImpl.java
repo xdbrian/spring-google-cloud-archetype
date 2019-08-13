@@ -1,16 +1,21 @@
 package com.example.demo.service.impl;
 
+
+import com.example.demo.external.ApiExpectativeLife;
 import com.example.demo.model.ClientRequest;
 import com.example.demo.model.ClientResponse;
-import com.example.demo.model.ExpectativeLifeResponse;
+import com.example.demo.external.model.ExpectativeLifeResponse;
 import com.example.demo.service.ServiceClient;
 import com.example.demo.util.ClientAdapter;
+import com.example.demo.util.SexEnum;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-//import review.intercorp.client.external.model.ApiExpectativeLife;
+
 
 
 /**
@@ -28,8 +33,8 @@ public class ServiceClientImpl implements ServiceClient {
     }
 
 
-//    @Autowired
-//    private ApiExpectativeLife apiExpectativeLife;
+    @Autowired
+    private ApiExpectativeLife apiExpectativeLife;
 
     /**
      * Lista cliente.
@@ -40,23 +45,23 @@ public class ServiceClientImpl implements ServiceClient {
     public List<ClientResponse> list() {
 
 
-//        memory.stream().forEach( item -> {
-//            ExpectativeLifeResponse expectativeLifeResponse = getExpectativeLife(
-//                    item.getSexo(),
-//                    item.getFechaacimiento());
-//
-//            item.setEdadProbableMuerte(expectativeLifeResponse.getTotalLifeExpectancy().intValue());
-//        });
+        memory.stream().forEach( item -> {
+            ExpectativeLifeResponse expectativeLifeResponse = getExpectativeLife(
+                    item.getSexo(),
+                    item.getFechaacimiento());
+
+            item.setEdadProbableMuerte(expectativeLifeResponse.getTotalLifeExpectancy().intValue());
+        });
         return memory;
     }
 
 
     private ExpectativeLifeResponse getExpectativeLife(String sexo, String fechaacimiento) {
-//        try {
-//            return apiExpectativeLife.expectativeLife(SexEnum.get(sexo).getCodeExternal(),"Peru",fechaacimiento).execute().body();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
+        try {
+            return apiExpectativeLife.expectativeLife(SexEnum.get(sexo).getCodeExternal(),"Peru",fechaacimiento).execute().body();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         return null;
     }
 
