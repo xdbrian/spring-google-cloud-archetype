@@ -24,10 +24,16 @@ public class KpiController {
     private ServiceAnalyze serviceAnalyze;
 
     @GetMapping(value = "/kpi-clientes")
-    @ApiOperation(value = "Obtiene métricas de clientes", response = List.class)
+    @ApiOperation(value = "Obtiene métricas de clientes", response = KpiClienteResponse.class)
     public KpiClienteResponse getAll() {
         return serviceAnalyze.kpideclientes();
     }
 
+
+    @GetMapping(value = "/")
+    @ApiOperation(value = "Obtiene métricas de clientes", response = String.class)
+    public KpiClienteResponse getInfo() {
+        return serviceAnalyze.kpideclientes();
+    }
 
 }
