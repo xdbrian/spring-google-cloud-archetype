@@ -1,5 +1,6 @@
 package com.example.demo.expose;
 
+import com.example.demo.model.KpiClienteResponse;
 import com.example.demo.service.ServiceAnalyze;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -24,8 +25,8 @@ public class KpiController {
 
     @GetMapping(value = "/kpi-clientes")
     @ApiOperation(value = "Obtiene métricas de clientes", response = List.class)
-    public ResponseEntity<Object> getAll() {
-        return ResponseEntity.ok(serviceAnalyze.kpideclientes());
+    public KpiClienteResponse getAll() {
+        return serviceAnalyze.kpideclientes();
     }
 
 
